@@ -1,0 +1,587 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dela+Gothic+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap');
+
+
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+:root{
+    --brand-font: "Dela Gothic One", sans-serif;
+    --button-hover-color:#EB638B;
+}
+
+/* Modal Styling */
+.modal-content {
+    border-radius: 8px;
+    border: none;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header{
+    background-color:#EB638B;
+    color:#fff;
+}
+.btn.btn-primary{
+    background-color:#2980b9;
+    color:#fff;
+}
+.btn.btn-primary:hover{
+    background-color:#007bff;
+    color:#fff;
+}
+.btn.btn-secondary1,
+.btn.btn-secondary{
+    background-color:#f44336;
+    color:#fff;
+}
+.btn.btn-secondary1:hover,
+.btn.btn-secondary:hover{
+    background-color:#c92217;
+    color:#fff;
+}
+
+.modal-footer {
+    border-top: none;
+    padding: 1rem;
+    justify-content: center;
+}
+
+.modal-body {
+    padding: 1.5rem;
+    font-size: 1.1rem;
+    color: #343a40;
+}
+
+/* Button Styling */
+.btn {
+    font-size: 1rem;
+    padding: 0.6rem 1.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/* Success Modal Styling */
+.modal-header h5.modal-title {
+    font-weight: bold;
+}
+
+.modal-header .btn-close {
+    background: transparent;
+    border: none;
+    font-size: 1.2rem;
+}
+
+.modal-content .btn-close {
+    outline: none;
+    transition: transform 0.2s;
+}
+
+.modal-content .btn-close:hover {
+    transform: rotate(90deg);
+    color: #ff6b6b;
+}
+
+
+/* Input Styling */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ced4da;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+
+
+.error-message {
+    color: #dc3545;
+    font-size: 0.9rem;
+    margin-top: -10px;
+    margin-bottom: 10px;
+}
+
+.form-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 65%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); /* Responsive columns */
+    gap: 10px; /* Space between items */
+    padding: 10px;
+}
+.gallery-item {
+    position: relative;
+    overflow: hidden; /* Hide overflow to create a nice effect */
+    border-radius: 8px; /* Rounded corners */
+    min-height: 200px;
+   
+}
+
+.gallery-item img {
+    width: auto; /* Full width of the item */
+    height: 100%; /* Maintain aspect ratio */
+    transition: transform 0.3s ease; /* Smooth zoom effect */
+    
+}
+.gallery-item:hover img {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+#logo_1{
+    position: relative; /* Changed from absolute to relative for better responsiveness */
+    top: -3px;
+    left: 10px;
+    display: flex;
+    align-items: center; /* Aligns items vertically within the container */
+    gap: 0; /* Add spacing between the image and text */
+    padding: 10px; /* Optional: Add padding for spacing */
+    
+}
+#logo_1 img{
+    width: 45px; /* Set a fixed width or use rem for relative scaling */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't overflow */
+}
+#logo_1 h3{
+    font-size: 1.5rem; /* Use rem for scalable font sizes (24px = 1.5rem) */
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    color: #ed6aa3;
+    font-family: var(--brand-font);
+    font-weight: 200;
+}
+
+h2{
+    font-size: 1.5rem; /* Use rem for scalable font sizes (24px = 1.5rem) */
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    color: #ed6aa3;
+    font-family: var(--brand-font);
+    font-weight: 200;
+}
+/* Form Container */
+form {
+    padding: 40px;
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column; /* Stack form elements vertically */
+    align-items: center; /* Centers form elements horizontally */
+}
+
+/* Form Group (for each input field) */
+form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #000;
+    align-self: flex-start; /* Keep labels aligned to the left */
+    
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"],
+form select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 20px;
+    transition: border-color 0.3s ease-in-out;
+}
+
+
+
+/* Submit Button */
+#login_button, .code-button, .verify-button, .reset-button, .prev-button, #register_button{
+    width: 100%;
+    padding: 12px;
+    background-color: #ed6aa3;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    box-sizing: border-box; 
+    transition: background-color 0.3s ease-in-out;
+}
+#login_button:hover,
+.code-button:hover,
+.verify-button:hover,
+.reset-button:hover,
+.prev-button:hover,
+#register_button:hover {
+    background-color: var(--button-hover-color); 
+    border-color:var(--button-hover-color);
+}
+
+/* Sign Up Page */
+#sign-up {
+    margin-top: 20px;
+    margin-left: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+#signup-form{
+    margin-top: -5%;
+}
+#sign-up i,
+#for-pass i{
+    color: #fff;
+    text-decoration: underline;
+    cursor: pointer;
+    text-align: center;
+}
+
+/* Sign In and Sign Up Containers */
+.sign-up-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 35%; 
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-left: 20px; 
+    color: #fff;
+    
+}
+.sign-up-container h1{
+    font-size: 50px;
+    margin-bottom: 10px; 
+    margin-top: 80px;
+    margin-left: 105px;
+    color:#000;
+}
+.sign-up-container h3{
+    font-size: 24px;
+    margin-top: 0px;
+    letter-spacing: 2px; 
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    color: #fff;
+}
+
+/* Radio Button Group */
+.radio-group {
+    display: flex; /* To make items inline */
+    gap: 20px; /* Space between radio buttons */
+    margin-bottom: 20px;
+    color: #fff;
+}
+.radio-group input[type="radio"] {
+    margin-right: 5px; /* Space between radio button and label */
+}
+.radio-group label {
+    font-size: 14px;
+    font-weight: bold;
+}
+.radio-group input[type="radio"]:focus {
+    outline: 2px solid #2980b9; /* Highlight when focused */
+}
+
+/* Validation */
+#popup-notification {
+    display: none;
+    position: fixed;
+    top: 20px; /* Adjust as needed */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #f44336; /* Red background */
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it's on top */
+    transition: opacity 0.3s ease;
+    opacity: 0; /* Start hidden */
+}
+#popup-notification.show {
+    display: block; /* Show the notification */
+    opacity: 1; /* Fade in */
+}
+/*eye toggle style*/
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+  }
+  
+  .password-container input[type="password"] {
+    width: 100%;
+    padding-right: 40px; /* Space for the toggle button */
+  }
+  
+  .eye-toggle {
+    max-width: 400px;
+    position: absolute;
+    right: 15px;
+    top: 13px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    font-size: 15px;
+    color: gray; /* Icon color */
+  }
+  
+  .eye-toggle i {
+    pointer-events: none; /* Ensures the button toggles when clicking the icon */
+  }
+  
+  
+
+/* MEDIA QUERY */
+@media (max-width: 1024px) {
+    .image-container {
+      grid-template-columns: repeat(4, 1fr); /* 3 images per row */
+    }
+   .sign-up-container {
+          width: 380px;
+          padding: 15px;
+          max-width: 100%; 
+        }
+    .sign-up-container form {
+        margin-top: 20%;
+          padding: 20px;
+          width: 100%; 
+          box-sizing: border-box;
+        }  
+    .sign-up-container h1 {
+      margin-top: 25%;
+      margin-bottom: 5%;
+      font-size: 2.5em;
+    }
+  
+    .sign-up-container h3 {
+      font-size: 1.2em;
+    }
+    .sign-up-container input[type="text"], 
+    .sign-up-container button {
+      padding: 10px;
+      width: 100%;
+    }
+  }
+@media (max-width: 990px){
+    form{
+        max-width: 300px;
+    }
+    .sign-up-container h1{
+       margin-left: 25%;
+    }
+}
+
+@media (max-width: 768px) {
+    body{
+        overflow-y: scroll;
+    }
+    .modal-content {
+        margin: 20px;
+    }
+    .image-container {
+        display: flex; 
+        flex-direction: row; 
+        overflow: hidden; 
+        width: 100vw; 
+        height: 110px; 
+        gap: 5px; 
+    }
+    .gallery-item {
+        flex: 0 0 auto; /* Prevent images from shrinking */
+        width: 200px;
+        height: 100%; 
+        animation: scrollHorizontally 15s linear infinite; /* Faster scroll */ 
+    }
+    .gallery-item img {
+        width: 100%; 
+        height: 100%;
+        object-fit: cover; 
+    }
+    /*animation effect for gallery*/
+    @keyframes scrollHorizontally {
+        0% {
+            transform: translateX(0); /* Start position */
+        }
+        100% {
+            transform: translateX(-100%); /* Move by 100% of the container width */
+        }
+    }
+    #logo_1{
+        display: flex;
+        justify-content: center; /* Centers the logo and text horizontally */
+        padding: 130px;
+        margin: 0 auto; /* Center the whole container */
+        width: 50%; /* Adjust width for smaller screens */ 
+        gap: 0;
+        min-height: 100px;  
+    }
+    #logo_1 img {
+        max-width: 45px; /* Keep logo responsive */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .login-container h1 {
+        display: none;
+    }
+    .sign-up-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        width: 100%;  
+        height: auto;      
+        min-height: fit-content; 
+    }
+    .sign-up-container form {
+        padding-top: 220px;
+        width: 70%;
+        max-width: 100%;
+        gap: 5px;
+    }
+    .sign-up-container h1 {
+        display: none; 
+    }
+     .sign-up-container input[type="text"], 
+     .sign-up-container input[type="password"],
+     .sign-up-container input[type="email"],
+     #register_button {
+       padding: 7px; /* reduce padding of input and button elements */
+       font-size: 0.8em; /* reduce font size of input and button elements */
+    }
+    .eye-toggle {
+        right: 5px; /* Bring the toggle button closer for better alignment */
+        top: 10px; /* Adjust the vertical position */
+        font-size: 12px; /* Smaller icon size */
+    }
+}
+
+
+@media (max-width: 576px) {
+    
+    .modal-header {
+        text-align: center;
+    }
+
+    .modal-body {
+        text-align: center;
+    }
+
+    .modal-footer {
+        justify-content: center;
+    }
+}
+@media (max-width: 426px)  {
+    .image-container {
+        display: flex; 
+        flex-direction: row; 
+        overflow: hidden; 
+        width: 100vw; 
+        height: 100%; 
+        gap: 5px;    
+    }
+    .gallery-item {
+        flex: 0 0 auto; 
+        width: 130px; 
+        height: 100%;
+        animation: scrollHorizontally 15s linear infinite;
+    }
+    .gallery-item img {
+        width: 100%; 
+        height: 15%; 
+        object-fit:cover; 
+    }
+     /*animation effect for gallery*/
+    @keyframes scrollHorizontally {
+        0% {
+            transform: translateX(0); /* Start position */
+        }
+        100% {
+            transform: translateX(-100%); /* Move by 100% of the container width */
+        }
+    }
+    #logo_1 {
+        justify-content: center; /* Centers the logo and text horizontally */
+        text-align: center;
+        width: 50%; 
+    }
+    #logo_1 h3{
+        font-size: 1.5rem;
+    }
+    #logo_1 img{
+        width: auto;
+        height: 20%;
+    } 
+    .sign-up-container {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        justify-content: center; 
+        height: 100%;
+        width: 100%;  
+        top: 25%;        
+        padding: 20px; 
+        padding-top: 10px;
+    }
+    .sign-up-container form {
+        height: 100%;
+        padding: 15px; 
+        top: 90px;
+        width: 100%; /* Make it wider for small screens */
+        max-width: 400px; /* Set a max-width for form to avoid excessive width */
+    }
+    .sign-up-container h1 {
+        display: none;
+    }
+    
+    .sign-up-container input[type="text"], 
+    .sign-up-container input[type="password"],
+    .sign-up-container input[type="email"],
+    #register_button {
+        padding: 7px; /* reduce padding of input and button elements */
+        font-size: 0.8rem; /* reduce font size of input and button elements */
+      }   
+      
+}

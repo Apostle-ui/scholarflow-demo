@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/for_pass.css">
+    <title>Forgot Password</title>
+	<link rel="icon" sizes="180x180" href="pic/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="pic/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pic/favicon-16x16.png">
+    <link rel="manifest" href="pic/site.webmanifest">
+
+</head>
+<body>
+    <div id="logo_1">
+        <img src="pic/logo1.png" alt="Logo"/>
+        <h3>cholarFlow.</h3>
+    </div>
+    <div class="img-container">
+        <img src="pic/bg.png" alt="Alabang People's Center"/>
+    </div> 
+
+    <div class="fpass-content-container">
+        <section id="fpass-container-2" class="page">
+            <h1>Enter the 4-Digit Code</h1>
+            <p>We’ve sent a code to your email. Please enter the 4-digit code.</p>
+            <form id="verify-code-form" action="php/verify_code.php" method="POST">
+                <input type="text" id="code" name="code" placeholder="Enter the 4-digit code" required>
+                <button type="submit" class="verify-button">Verify Code</button>
+            </form>
+            <button class="prev-button" onclick="window.location.href='fpass.html'">Send Code Again</button>
+        </section>
+    </div>
+        
+    <div id="successModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <p>Password reset successful! Click the button below to log in.</p>
+            <a href="index.html" class="button" id="login-button">Continue to log in</a>
+     </div>
+    
+    
+    
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
+

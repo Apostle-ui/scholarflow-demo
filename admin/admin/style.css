@@ -1,0 +1,2699 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+a {
+	text-decoration: none;
+}
+
+li {
+	list-style: none;
+}
+
+:root {
+	--poppins: 'Poppins', sans-serif;
+	--lato: 'Lato', sans-serif;
+	--light: #F9F9F9;
+	--blue: #3C91E6;
+	--light-blue: #CFE8FF;
+	--grey: #eee;
+	--dark-grey: #AAAAAA;
+	--dark: #342E37;
+	--red: #DB504A;
+	--yellow: #FFCE26;
+	--light-yellow: #FFF2C6;
+	--orange: #FD7238;
+	--light-orange: #FFE0D3;
+	--pink:#e44b8d;
+	--light-yellow: #fff9c4;
+    --orange: #ff7043;
+    --light-green: #a5d6a7;
+    --dark-green: #388e3c;
+    --light-red: #ef9a9a;
+    --dark-red: #c62828;
+}
+
+html {
+	overflow-x: hidden;
+}
+
+body.dark {
+	--light: #0C0C1E;
+	--grey: #060714;
+	--dark: #FBFBFB;
+}
+/* Dark mode styles */
+body.dark {
+    background-color: #121212; /* Dark background color */
+    color: white; /* White text for dark mode */
+}
+
+/* Ensure links, buttons, and other elements also have white text in dark mode */
+body.dark a, body.dark button, body.dark input{
+    color: white;
+    border-color: white; /* Optional: to make borders white */
+}
+
+/* You can also define other custom styles for dark mode as needed */
+body.dark .header, body.dark .footer {
+    background-color: #333; /* Example: Darken the header/footer */
+}
+
+body {
+	background: var(--grey);
+	overflow-x: hidden;
+}
+
+#web-icon{
+	width: 150px;
+	height: 500px;
+	padding: 0;
+	margin: 0;
+}
+
+.dropdown-menu {
+	display: none;
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	padding-left: 20px;
+}
+
+.dropdown-menu li a {
+	padding: 8px;
+	background-color: #ffffff;
+	color: black; /* Ensure dropdown text remains black */
+	transition: background-color 0.3s, color 0.3s;
+}
+
+.dropdown-menu li a:hover {
+	background-color: #f0f0f0;
+	color: black; /* Ensure text remains black on hover */
+}
+
+.dropdown-menu li a:focus,
+.dropdown-menu li a:active {
+	color: black; /* Prevent clicked state from changing text color */
+}
+
+/* SIDEBAR */
+#sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 280px;
+	height: 100%;
+	background: var(--light);
+	z-index: 2000;
+	font-family: var(--lato);
+	transition: .3s ease;
+	overflow-x: hidden;
+	scrollbar-width: none;
+}
+#sidebar::--webkit-scrollbar {
+	display: none;
+}
+#sidebar.hide {
+	width: 60px;
+}
+#sidebar .brand img{
+	min-width: 37px;
+	width: 37px;
+	height: auto;
+	margin-top: 10%;
+	margin-left: 10%;
+	margin-right: 0;
+	padding: 0;
+	gap: 0;
+}
+#sidebar .brand h1{
+	margin: 0;
+	margin-top: 10%;
+	font-size: 25px;
+	gap: 0;
+	padding: 0;
+}
+#sidebar .brand {
+	font-size: 24px;
+	font-weight: 700;
+	height: 56px;
+	display: flex;
+	align-items: center;
+	color: var(--pink);
+	position: sticky;
+	top: 0;
+	left: 0;
+	gap: 0;
+	padding: 0;
+	margin: 0;
+	background: var(--light);
+	z-index: 500;
+	padding-bottom: 20px;
+	box-sizing: content-box;
+}
+
+#sidebar .side-menu {
+	width: 100%;
+	margin-top: 48px;
+}
+#sidebar .side-menu li {
+	height: 48px;
+	background: transparent;
+	margin-left: 6px;
+	border-radius: 48px 0 0 48px;
+	padding: 4px;
+}
+#sidebar .side-menu li.active {
+	background: var(--grey);
+	position: relative;
+}
+#sidebar .side-menu li.active::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	top: -40px;
+	right: 0;
+	box-shadow: 20px 20px 0 var(--grey);
+	z-index: -1;
+}
+#sidebar .side-menu li.active::after {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	bottom: -40px;
+	right: 0;
+	box-shadow: 20px -20px 0 var(--grey);
+	z-index: -1;
+}
+#sidebar .side-menu li a {
+	width: 100%;
+	height: 100%;
+	background: var(--light);
+	display: flex;
+	align-items: center;
+	border-radius: 48px;
+	font-size: 16px;
+	color: var(--dark);
+	white-space: nowrap;
+	overflow-x: hidden;
+}
+.text{
+	vertical-align: middle;
+}
+#sidebar .side-menu.top li.active a {
+	color: var(--pink);
+}
+#sidebar.hide .side-menu li a {
+	width: calc(48px - (4px * 2));
+	transition: width .3s ease;
+}
+#sidebar.hide .brand h1 {
+	opacity: 0; /* Makes the span invisible */
+	pointer-events: none; /* Ensures it cannot be interacted with */
+	transition: opacity 0.3s ease; /* Smooth fade-out effect */
+  }
+  
+#sidebar .side-menu li a.logout {
+	color: var(--red);
+}
+#sidebar .side-menu.top li a:hover {
+	color: var(--pink);
+}
+#sidebar .side-menu li a .bx {
+	min-width: calc(60px  - ((4px + 6px) * 2));
+	display: flex;
+	justify-content: center;
+}
+#sidebar .side-menu .logout i {
+    font-size: 20px; 
+}
+
+/* SIDEBAR */
+
+
+
+
+
+/* CONTENT */
+#content {
+	position: relative;
+	width: calc(100% - 280px);
+	left: 280px;
+	transition: .3s ease;
+}
+#sidebar.hide ~ #content {
+	width: calc(100% - 60px);
+	left: 60px;
+}
+
+/* CONTENT */
+
+
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 34px;
+    height: 20px;
+    margin-left: 10px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 12px;
+    width: 12px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #4caf50; /* Change to desired active color */
+}
+
+input:checked + .slider:before {
+    transform: translateX(14px);
+}
+
+
+
+/* NAVBAR */
+#content nav {
+	height: 56px;
+	background: var(--light);
+	padding: 0 24px;
+	display: flex;
+	align-items: center;
+	grid-gap: 24px;
+	font-family: var(--lato);
+	position: sticky;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+}
+#content nav::before {
+	content: '';
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	bottom: -40px;
+	left: 0;
+	border-radius: 50%;
+	box-shadow: -20px -20px 0 var(--light);
+}
+#content nav a {
+	color: var(--dark);
+}
+#content nav .bx.bx-menu {
+	cursor: pointer;
+	color: var(--dark);
+}
+#content nav .nav-link {
+	font-size: 16px;
+	transition: .3s ease;
+}
+#content nav .nav-link:hover {
+	color: var(--pink);
+}
+#content nav form {
+	max-width: 400px;
+	width: 100%;
+	margin-right: auto;
+}
+#content nav form .form-input {
+	display: flex;
+	align-items: center;
+	height: 36px;
+}
+#content nav form .form-input input {
+	flex-grow: 1;
+	padding: 0 16px;
+	height: 100%;
+	border: none;
+	background: var(--grey);
+	border-radius: 36px 0 0 36px;
+	outline: none;
+	width: 100%;
+	color: var(--dark);
+}
+#content nav form .form-input button {
+	width: 36px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: var(--pink);
+	color: var(--light);
+	font-size: 18px;
+	border: none;
+	outline: none;
+	border-radius: 0 36px 36px 0;
+	cursor: pointer;
+	background-color:#000;
+}
+#content nav .notification {
+	font-size: 20px;
+	position: relative;
+}
+#content nav .notification .num {
+	position: absolute;
+	top: -6px;
+	right: -6px;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: 2px solid var(--light);
+	background: var(--red);
+	color: var(--light);
+	font-weight: 700;
+	font-size: 12px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#content nav .profile img {
+	width: 36px;
+	height: 36px;
+	object-fit: cover;
+	border-radius: 50%;
+}
+#content nav .switch-mode {
+	display: block;
+	min-width: 50px;
+	height: 25px;
+	border-radius: 25px;
+	background: var(--grey);
+	cursor: pointer;
+	position: relative;
+}
+#content nav .switch-mode::before {
+	content: '';
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	bottom: 2px;
+	width: calc(25px - 4px);
+	background: var(--pink);
+	border-radius: 50%;
+	transition: all .3s ease;
+}
+#content nav #switch-mode:checked + .switch-mode::before {
+	left: calc(100% - (25px - 4px) - 2px);
+}
+
+body.dark #content nav form .form-input button{
+	background-color:#fff;
+}
+
+
+/* NAVBAR */
+
+
+/* MAIN */
+#content main {
+	width: 100%;
+	padding: 36px 24px;
+	font-family: var(--poppins);
+	max-height: calc(100vh - 56px);
+	overflow-y: auto;
+}
+#content main .head-title {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	grid-gap: 16px;
+	flex-wrap: wrap;
+}
+#content main .head-title .left h1 {
+	font-size: 36px;
+	font-weight: 600;
+	margin-bottom: 10px;
+	color: var(--dark);
+}
+#content main .head-title .left .breadcrumb {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+}
+#content main .head-title .left .breadcrumb li {
+	color: var(--dark);
+}
+#content main .head-title .left .breadcrumb li a {
+	color: var(--dark-grey);
+	pointer-events: none;
+}
+#content main .head-title .left .breadcrumb li a.active {
+	color: var(--pink);
+	pointer-events: unset;
+}
+#content main .head-title .btn-download {
+	height: 36px;
+	padding: 0 16px;
+	border-radius: 36px;
+	background: var(--pink);
+	color: var(--light);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	grid-gap: 10px;
+	font-weight: 500;
+	border: 1px solid var(--pink);
+	box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); 
+	cursor: pointer;
+}
+#content main .head-title .btn-download:hover{
+	background-color:#c4427a;
+}
+
+
+
+
+#content main .box-info-applicants, 
+#content main .box-info-accounts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 24px;
+    margin-top: 36px;
+}
+
+#content main .box-info-applicants li, 
+#content main .box-info-accounts li {
+	padding: 24px;
+	background: var(--light);
+	border-radius: 20px;
+	display: flex;
+	align-items: center;
+	grid-gap: 24px;
+}
+
+#content main .box-info-applicants li .bx, 
+#content main .box-info-accounts li .bx {
+	width: 80px;
+	height: 80px;
+	border-radius: 10px;
+	font-size: 36px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#content main .box-info-accounts li:nth-child(1) .bx,
+#content main .box-info-accounts li:nth-child(2) .bx,
+#content main .box-info-accounts li:nth-child(3) .bx {
+	background: var(--light-blue);
+	color: var(--pink);
+}
+
+#content main .box-info-applicants li:nth-child(1) .bx {
+    background: var(--light-yellow); /* Pending: Light yellow background */
+    color: var(--orange);            /* Pending: Orange text color */
+}
+
+#content main .box-info-applicants li:nth-child(2) .bx {
+    background: var(--light-green);  /* Accepted: Light green background */
+    color: var(--dark-green);        /* Accepted: Dark green text color */
+}
+
+#content main .box-info-applicants li:nth-child(3) .bx {
+    background: var(--light-red);    /* Rejected: Light red background */
+    color: var(--dark-red);          /* Rejected: Dark red text color */
+}
+
+
+#content main .box-info li .text h3 {
+	font-size: 24px;
+	font-weight: 600;
+	color: var(--dark);
+}
+#content main .box-info li .text p {
+	color: var(--dark);	
+}
+#content main .charts {
+	display: flex;
+	justify-content: space-between;
+	grid-gap: 24px;
+	margin-top: 36px;
+}
+
+/* Chart section to hold everything */
+#content main .charts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Row for bar and line charts (top row) */
+#content main .charts .chart-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px; /* Maximum width for the top row */
+    gap: 20px;
+}
+
+/* Apply to all chart containers */
+#content main .chart-container {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    width: 48%; /* Same width for all charts */
+    border: 1px solid #ddd; /* Border similar to .box-info */
+}
+
+/* Apply specific styling for bar and line charts */
+#content main .chart-container:nth-child(1) {
+    background: var(--light-blue);
+    border-color: var(--blue);
+}
+
+#content main .chart-container:nth-child(2) {
+    background: var(--light-yellow);
+    border-color: var(--yellow);
+}
+
+/* Gender pie chart styling */
+.gender-chart-container {
+    padding: 24px;
+    background: var(--light);
+    border-radius: 20px;
+    width: 48%; /* Same width as the top charts */
+    border: 1px solid #ddd;
+    margin-top: 30px; /* Add some space between the pie chart and the top row */
+    margin-bottom: 30px; /* Optional margin below the pie chart */
+    box-sizing: border-box; /* Include padding in element's width/height calculation */
+    order: 3; /* Ensure pie chart appears below bar and line chart */
+}
+
+/* Ensure the pie chart fills its container */
+#genderPieChart {
+    width: 100% !important;
+    height: auto !important;
+}
+
+
+
+
+#content main .table-data {
+	display: flex;
+	flex-wrap: wrap;
+	grid-gap: 24px;
+	margin-top: 24px;
+	width: 100%;
+	color: var(--dark);
+}
+#content main .table-data > div {
+	border-radius: 20px;
+	background: var(--light);
+	padding: 24px;
+	overflow-x: auto;
+}
+#content main .table-data .head {
+	display: flex;
+	align-items: center;
+	grid-gap: 16px;
+	margin-bottom: 24px;
+}
+#content main .table-data .head h3 {
+	margin-right: auto;
+	font-size: 24px;
+	font-weight: 600;
+}
+#content main .table-data .head .bx {
+	cursor: pointer;
+}
+
+#content main .table-data .order {
+	flex-grow: 1;
+	flex-basis: 500px;
+}
+#content main .table-data .order table {
+	width: 100%;
+	border-collapse: collapse;
+}
+#content main .table-data .order table th {
+	padding-left: 13px;
+	padding-bottom: 12px;
+	font-size: 13px;
+	text-align: left;
+	border-bottom: 1px solid var(--grey);
+}
+#content main .table-data .order table td {
+	padding: 10px 10px;
+}
+#content main .table-data .order table tr td:first-child {
+	display: flex;
+	align-items: center;
+	grid-gap: 15px;
+	padding-left: 6px;
+}
+
+#content main .table-data .order table tbody tr:hover {
+	background: var(--grey);
+}
+#content main .table-data .order table tr td .status {
+	font-size: 10px;
+	padding: 6px 16px;
+	color: var(--light);
+	border-radius: 20px;
+	font-weight: 700;
+}
+#content main .table-data .order table tr td .status.completed {
+	background: var(--pink);
+}
+#content main .table-data .order table tr td .status.process {
+	background: var(--yellow);
+}
+#content main .table-data .order table tr td .status.pending {
+	background: var(--orange);
+}
+
+
+/*-----------------MODAL STYLE-----------------*/
+.modal {
+	display: none; 
+	position: fixed; 
+	z-index: 1; 
+	left: 0;
+	top: 0;
+	width: 100%; 
+	height: 100%; 
+	overflow: auto; 
+	background-color: rgba(117, 1, 92, 0.92); 
+	transition: opacity 0.3s ease;
+}
+/*-----------------MODAL STYLE-----------------*/
+
+/*-----------------EDIT ACCOUNT MODAL-----------------*/
+#editAccountModal .modal-content{
+	position: relative;
+	background-color: #fff; 
+	color:#fff;
+	margin: 5% auto; 
+	padding: 20px 10px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 400px; 
+	height: 100%;
+	max-height: 400px;
+	animation: slideIn 0.4s;
+}
+
+/* Modal Header */
+.modal-content h2 {
+	margin: 0;
+	padding-bottom: 10px;
+	font-size: 1.5rem;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+.modal-content h3 {
+	padding-bottom: 10px;
+	color:#000;
+	font-style: italic;
+	font-weight: bold;
+}
+
+#editAccountModal #editForm {
+    background-color:#fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#editAccountModal label {
+	color:#000;
+    display: block;
+    font-size: 15px;
+	margin-top: 2%;
+	margin-bottom: 0;
+}
+
+#editAccountModal input[type="text"],
+#editAccountModal input[type="email"],
+#editAccountModal input[type="password"],
+#editAccountModal select {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    color: #000;
+    margin: 10px 0; 
+    border: 1px solid #000;
+    border-radius: 10px;
+    transition: border-color 0.3s;
+}
+
+/* Focus state for text, email, password inputs, and select dropdown */
+#editAccountModal input[type="text"]:focus,
+#editAccountModal input[type="email"]:focus,
+#editAccountModal input[type="password"]:focus,
+#editAccountModal select:focus {
+    border-color: #000;
+}
+
+#editAccountModal button[type="submit"]{
+	background-color: #2196f3;  
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+#editAccountModal button[type="submit"]:hover{
+	background-color:#1976d2;
+}
+
+/* Close Button */
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*-----------------EDIT ORGANIZATION MODAL-----------------*/
+
+
+
+/*-----------------EDIT APPLICANTS MODAL-----------------*/
+#editApplicantsModal .modal-content{
+	position: relative;
+	background-color: #fff; 
+	color:#fff;
+	margin: 5% auto; 
+	padding: 25px 10px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 450px; 
+	height: 100%;
+	max-height: 450px;
+	animation: slideIn 0.4s;
+}
+
+/* Modal Header */
+.modal-content h2 {
+	margin: 0;
+	padding-bottom: 10px;
+	font-size: 1.5rem;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+.modal-content h3 {
+	padding-bottom: 10px;
+	color:#000;
+	font-style: italic;
+	font-weight: bold;
+}
+#editApplicantsModal #editForm{
+    background-color:#fff;
+    color: #000;
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#editApplicantsModal label{
+	color:#000;
+    display: block;
+    font-size: 15px;
+	margin-top: 2%;
+	margin-bottom: 0;
+}
+
+#editApplicantsModal  input[type="text"],
+#editApplicantsModal  input[type="email"],
+#editApplicantsModal  input[type="password"],
+#editApplicantsModal  input[type="date"],
+#editApplicantsModal  input[type="file"],
+#editApplicantsModal #edit_gender,
+#editApplicantsModal #edit_school_level,
+#editApplicantsModal #edit_year_level{
+	width: calc(100% - 20px); 
+	padding: 10px;
+	color:#000;
+	margin: 10px 0; 
+	border: 1px solid #000;
+	border-radius: 10px;
+	transition: border-color 0.3s;
+}
+
+#editApplicantsModal input[type="text"]:focus,
+#editApplicantsModal input[type="email"]:focus,
+#editApplicantsModal  input[type="password"]:focus {
+	border-color: #000; 
+}
+
+#editApplicantsModal #edit_gender:focus {
+	background-color:#fff;
+	outline: none; 
+	box-shadow: 0 0 0 2px #000; 
+}
+
+#editApplicantsModal button[type="submit"]{
+	background-color: #2196f3;  
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+#editApplicantsModal button[type="submit"]:hover{
+	background-color:#1976d2;
+}
+
+/* Close Button */
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*-----------------EDIT APPLICANTS MODAL-----------------*/
+
+/*-----------------DELETE MODAL-----------------*/
+#deleteModal .modal-content {
+	display: flex;
+	position: relative; 
+	align-items:center;
+	justify-content: center;
+	flex-direction: column;
+	background-color: rgba(255, 255, 255, 0.92); 
+	margin: 10% auto; 
+	padding: 10px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 350px; 
+	height: 40%;
+	animation: slideIn 0.4s;
+}
+#deleteModal .modal-content h2 {
+	margin: 0;
+	font-size: 1.5rem;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+#deleteModal .modal-content p {
+	font-size: 19px;
+	text-align: center;
+	margin: 10px 20px;
+	color:#606060;
+}
+
+#deleteModal button[type="submit"] {
+	background-color: red;  
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+
+  #deleteModal  button[type="submit"]:hover {
+	background-color:  rgb(146, 2, 2);
+  }
+  
+  #deleteModal button[type="button"]{
+	background-color: #b0b0b0;  
+	color: #000;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+  }
+  #deleteModal  button[type="button"]:hover {
+	background-color:  #b0b0b0;
+  }
+  
+  /*POSITION OF THE TWO BUTTONS*/
+  #deleteModal button[type="button"],
+  #deleteModal button[type="submit"]{
+	margin-top: 5%;
+  }
+/*-----------------DELETE MODAL-----------------*/
+
+/*-----------------EDIT AND DELETE BUTTON*-----------------*/
+.edit-button, .delete-button, .accept-button, .reject-button {
+    padding: 8px 16px;         
+    border: none;              
+    border-radius: 5px;        
+    color: white;              
+    text-decoration: none;    
+    cursor: pointer;          
+    display: inline-block;     
+    font-size: 14px;          
+    min-width: 25%;          
+    text-align: center;       
+}
+
+/* Positive Action (Edit) - Green */
+.edit-button {
+    background-color: #4CAF50; 
+	font-weight: bold;
+}
+
+.edit-button:hover:hover {
+    background-color: #45a049; 
+}
+
+/* Negative Action (Delete) - Red */
+.delete-button{
+    background-color: #f44336; 
+	font-weight: bold;
+}
+
+.delete-button:hover:hover {
+    background-color: #e53935; 
+}
+/*-----------------EDIT AND DELETE BUTTON*-----------------*/
+
+/*-----------------ACTION BUTTONS STYLES*-----------------*/
+.action-buttons {
+    display: flex;            
+    gap: 10px;                
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;          
+    margin-bottom: 5px;    
+}
+
+.action-buttons .accept-button{
+	background-color: #e5e4e4;  
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.action-buttons .accept-button i.bx.bxs-check-circle {
+    color: #4CAF50;
+}
+
+.action-buttons .accept-button:hover{
+	background-color:#bababa;
+}
+
+.action-buttons .reject-button{
+	background-color:#e5e4e4;  
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.action-buttons .reject-button i.bx.bxs-x-circle {
+    color: #f44336;
+}
+.action-buttons .reject-button:hover{
+	background-color:#bababa;
+}
+
+.action-buttons .download-button{
+	background-color:#e5e4e4;  
+	color: #dfa702;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.action-buttons .download-button i.bx.bxs-download {
+	color: #007bff;
+}
+.action-buttons .download-button:hover{
+	background-color:#bababa;
+}
+.action-buttons .scan-button{
+	background-color:#e5e4e4;  
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+.action-buttons .scan-button:hover{
+	background-color:#bababa;
+}
+
+/*DARK MODE STYLE*/
+body.dark .action-buttons .accept-button,
+body.dark .action-buttons .reject-button,
+body.dark .action-buttons .download-button,
+body.dark .action-buttons .scan-button{
+	background-color:#fff;
+}
+body.dark .action-buttons .scan-button i.bx.bx-scan{
+	color:#000;
+}
+/*-----------------ACTION BUTTONS STYLES*-----------------*/
+  
+/*-----------------ADD MODAL-----------------*/
+#addModal .modal-content {
+	position: relative;
+	background-color: #fff; 
+	color:#fff;
+	margin: 6% auto; 
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 400px; 
+	height: 100%;
+	max-height: 430px;
+	animation: slideIn 0.4s;
+}
+
+/* Modal Header */
+#addModal .modal-content h2 {
+	margin: 0;
+	padding-top: 10px;
+	font-size: 1.7rem;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#addForm {
+    background-color:#fff;
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#addModal label {
+	color:#000;
+    display: block;
+    font-size: 15px;
+	margin-top: 2%;
+	margin-bottom: 0;
+}
+
+#addModal input[type="text"],
+#addModal  input[type="email"],
+#addModal  input[type="password"],
+#addModal select{
+	width: calc(100% - 20px); 
+	padding: 10px;
+	color:#000;
+	margin: 10px 0; 
+	border: 1px solid #000;
+	border-radius: 10px;
+	transition: border-color 0.3s;
+}
+
+#addModal input[type="text"]:focus,
+#addModal  input[type="email"]:focus,
+#addModal  input[type="password"]:focus,
+#addModal select {
+	border-color: #000; 
+}
+
+
+#addModal button[type="submit"]{
+	background-color: #2196f3;  
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	margin-top: 3%;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+#addModal button[type="submit"]:hover{
+	background-color:#1976d2;
+}
+
+/* Close Button */
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*-----------------ADD MODAL-----------------*/
+
+/*-----------------ADD ADMIN MODAL-----------------*/
+#addAdminModal .modal-content {
+	position: relative;
+	background-color: #fff; 
+	color:#fff;
+	margin: 6% auto; 
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 400px; 
+	height: 100%;
+	max-height: 350px;
+	animation: slideIn 0.4s;
+}
+
+/* Modal Header */
+#addAdminModal .modal-content h2 {
+	margin: 0;
+	padding-top: 10px;
+	font-size: 1.7rem;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#addForm {
+    background-color:#fff;
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#addAdminModal label {
+	color:#000;
+    display: block;
+    font-size: 15px;
+	margin-top: 2%;
+	margin-bottom: 0;
+}
+
+#addAdminModal input[type="text"],
+#addAdminModal  input[type="email"],
+#addAdminModal  input[type="password"]{
+	width: calc(100% - 20px); 
+	padding: 10px;
+	color:#000;
+	margin: 10px 0; 
+	border: 1px solid #000;
+	border-radius: 10px;
+	transition: border-color 0.3s;
+}
+
+#addAdminModal input[type="text"]:focus,
+#addAdminModal  input[type="email"]:focus,
+#addAdminModal  input[type="password"]:focus {
+	border-color: #000; 
+}
+
+
+#addAdminModal button[type="submit"]{
+	background-color: #2196f3;  
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	margin-top: 3%;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+#addAdminModal button[type="submit"]:hover{
+	background-color:#1976d2;
+}
+
+/* Close Button */
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*-----------------ADD ADMIN MODAL-----------------*/
+
+/*-----------------ADD MODAL IN APPLICANTS-----------------*/
+#addApplicantsModal .modal-content {
+	position: relative;
+	background-color: #fff; 
+	color:#fff;
+	margin: 3% auto; 
+	padding: 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 600px; 
+	height: 100%;
+	max-height: 500px;
+	animation: slideIn 0.4s;
+}
+
+/* Modal Header */
+#addApplicantsModal .modal-content h2 {
+	margin: 0;
+	padding-top: 10px;
+	font-size: 1.7rem;
+	color: #000;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+#addApplicantsModal #addForm {
+    background-color:#fff;
+    color: #000;
+    padding: 15px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: auto;
+}
+
+#addApplicantsModal label {
+	color:#000;
+    display: block;
+    font-size: 15px;
+	margin-top: 2%;
+	margin-bottom: 0;
+}
+
+#addApplicantsModal  input[type="text"],
+#addApplicantsModal  input[type="email"],
+#addApplicantsModal input[type="password"],
+#addApplicantsModal  input[type="date"],
+#addApplicantsModal  input[type="file"],
+#addApplicantsModal #gender,
+#addApplicantsModal #current-school-level,
+#addApplicantsModal #grade-level{
+	width: calc(100% - 20px); 
+	padding: 10px;
+	color:#000;
+	margin: 10px 0; 
+	border: 1px solid #000;
+	border-radius: 10px;
+	transition: border-color 0.3s;
+}
+#addApplicantsModal #gender{
+	background-color:#fff;
+}
+
+#addApplicantsModal p{
+	color:#000;
+}
+#editApplicantsModal #gender:focus {
+	background-color:#fff;
+	outline: none; 
+	box-shadow: 0 0 0 2px #000; 
+}
+
+#addApplicantsModal input[type="text"]:focus,
+#addApplicantsModal input[type="email"]:focus,
+#addApplicantsModal input[type="password"]:focus {
+	border-color: #000; 
+}
+
+#addApplicantsModal button[type="submit"]{
+	background-color: #2196f3;  
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	padding: 8px 20px;
+	margin-top: 3%;
+	font-size: 16px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+#addApplicantsModal button[type="submit"]:hover{
+	background-color:#1976d2;
+}
+#addApplicantsModal button[type="button"]{
+	background-color:var(--pink);
+}
+#addApplicantsModal .label-file{
+	background-color:var(--pink);
+	color:#fff;
+}
+#addApplicantsModal button[type="button"]:hover,
+#addApplicantsModal .label-file:hover{
+	background-color:#c4427a;
+}
+
+/* Close Button */
+.close {
+	position: absolute;
+	top: 10px;
+	right: 15px;
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+/*-----------------ADD MODAL IN APPLICANTS-----------------*/
+
+/*-----------------INTERVIEW AND EXAMINTAION IN ELIGIBLE MODAL-----------------*/
+/*Action buttons style*/
+tbody i.bx.bxs-trash,
+tbody i.bx.bxs-phone,
+tbody i.bx.bxs-pencil,
+tbody i.bx.bxs-edit,
+tbody i.bx.bxs-check-circle,
+tbody i.bx.bxs-x-circle{
+	font-size: 24px;
+	color: #000; 
+	background: none;
+  	background-color: transparent;
+	outline: none;
+	transition: color 0.3s ease, transform 0.2s ease;
+	cursor: pointer;
+}
+
+body.dark tbody i.bx.bxs-trash,
+body.dark tbody i.bx.bxs-phone,
+body.dark tbody i.bx.bxs-pencil,
+body.dark tbody i.bx.bxs-edit,
+body.dark tbody i.bx.bxs-check-circle,
+body.dark tbody i.bx.bxs-x-circle,
+body.dark tbody i.bx.bxs-download,
+body.dark tbody i.bx.bx-scan{
+	color:#fff;
+}
+
+tbody i.bx.bxs-trash:hover,
+tbody i.bx.bxs-phone:hover,
+tbody i.bx.bxs-pencil:hover,
+tbody i.bx.bxs-edit:hover,
+tbody i.bx.bxs-check-circle:hover,
+tbody i.bx.bxs-x-circle:hover,
+tbody i.bx.bx-scan:hover,
+tbody i.bx.bxs-download:hover{
+	transform: scale(1.2);
+}
+ 
+tbody i.bx.bxs-trash:focus,
+tbody i.bx.bxs-pencil:focus,
+tbody i.bx.bxs-phone:focus,
+tbody i.bx.bxs-edit:focus
+tbody i.bx.bxs-check-circle:focus,
+tbody i.bx.bxs-x-circle:focus{
+	outline: none; 
+	box-shadow: 0 0 5px #007bff; 
+}
+  
+tbody button {
+    background: none;      
+    border: none;         
+    padding: 0;            
+    cursor: pointer;  
+} 
+
+tbody button i {
+    background: transparent;
+    color: #000;             
+    font-size: 24px; 
+}
+.interview-score i.bx.bxs-phone {
+    color: #007bff; 
+}
+.exam-score i.bx.bxs-pencil {
+    color: #e6e02f; 
+}
+.move-bck-button i.bx.bxs-trash {
+    color: #f44336; 
+}
+.move-bck-button i.bx.bxs-check-circle {
+    color: #4CAF50;
+}
+.move-bck-button i.bx.bxs-x-circle {
+    color: #f44336;
+}
+/* Modal Background */
+#interviewModal,
+#examinationModal{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); 
+}
+
+/* Modal Content */
+#interviewModal .modal-content{
+    display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+	position: relative;
+	background-color: #fff; 
+	color:#000;
+	margin: 7% auto; 
+	padding: 35px 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 450px; 
+	height: 100%;
+	max-height: 450px;
+	animation: slideIn 0.4s;
+}
+#interviewModal #interviewForm label,
+#examinationModal #examinationForm label{
+	color:#000;
+	font-size: 16px; 
+    font-weight: bold; 
+    margin-bottom: 5px; 
+    display: block;
+}
+
+#examinationModal .modal-content{
+	display: flex;
+    flex-direction: column; 
+    justify-content: space-between; 
+	position: relative;
+	background-color: #fff; 
+	color:#000;
+	margin: 7% auto; 
+	padding: 35px 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	width: 100%; 
+	max-width: 450px; 
+	height: 100%;
+	max-height: 450px;
+	animation: slideIn 0.4s;
+}
+
+#interviewModal input[type="text"],
+#examinationModal input[type="text"]{
+	color:#000;
+	border:1px solid #000;
+}
+#interviewModal .modal-content h2,
+#examinationModal .modal-content h2{
+    color: #000;
+}
+
+/* Close Button */
+#interviewModal .close-btn,
+#examinationModal .close-btn{
+    position: absolute;
+	top: 0;
+	right: 10px;
+	color: #000;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+#interviewModal .close-btn:hover,
+#interviewModal .close-btn:focus,
+#examinationModal .close-btn:hover,
+#examinationModal .close-btn:focus{
+    color: red;
+    text-decoration: none;
+}
+
+/* Modal Button Style */
+#interviewModal .modal-content button,
+#examinationModal .modal-content button{
+    background-color: #007bff; 
+    color: #fff; 
+	font-weight: bold;
+    border: 2px solid #007bff; 
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.3s; 
+    margin-top: 15px; 
+    width: 100%;
+}
+
+/* Hover effect */
+#interviewModal .modal-content button:hover,
+#examinationModal .modal-content button:hover{
+    background-color: #0056b3; 
+	border-color:#0056b3;
+    transform: scale(1.05); 
+}
+
+/* Active effect */
+#interviewModal .modal-content button:active,
+#examinationModal .modal-content button:active{
+    background-color: #004085;
+    transform: scale(0.98);
+}
+
+/* Focus effect */
+#interviewModal .modal-content button:focus,
+#examinationModal .modal-content button:focus{
+    outline: none; 
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+}
+
+/* Form Layout for Modal */
+#interviewModal .form-group,
+#examinationModal .form-group{
+    margin-bottom: 15px; /* Space between form fields */
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 8px; 
+    font-size: 14px;
+    border: 1px solid #000;
+    border-radius: 4px;
+    box-sizing: border-box; 
+}
+
+input[type="number"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+
+/*-----------------INTERVIEW AND EXAMINATION IN ELIGIBLE MODAL-----------------*/
+
+
+
+
+
+
+/* Animation for Modal */
+@keyframes slideIn {
+	from {
+		transform: translateY(-50px);
+		opacity: 0;
+	}
+	to {
+		transform: translateY(0);
+		opacity: 1;
+	}
+}
+
+/* Floating Plus Icon Styles */
+.floating-icon {
+position: fixed;
+bottom: 20px;
+right: 20px;
+background-color: #4CAF50; /* Solid green background */
+border-radius: 50%;
+width: 50px; /* Fixed width */
+height: 50px; /* Fixed height */
+display: flex; /* Center the icon */
+justify-content: center; /* Center horizontally */
+align-items: center; /* Center vertically */
+box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Deeper shadow */
+cursor: pointer;
+font-size: 32px; /* Increased size of the icon */
+transition: transform 0.2s; /* Smooth transitions */
+z-index: 1000; /* Ensure it’s on top */
+}
+
+/* Increase size on hover */
+.floating-icon:hover {
+transform: scale(1.1); /* Slightly increase size on hover */
+}
+
+ /* Add these styles to your existing CSS file or in a <style> tag in the head section */
+ .switch-mode {
+	display: inline-block;
+	cursor: pointer;
+	position: relative;
+	width: 40px;
+	height: 20px;
+}
+
+.switch-mode input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ccc;
+	transition: .4s;
+	border-radius: 20px;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 16px;
+	width: 16px;
+	left: 2px;
+	bottom: 2px;
+	background-color: white;
+	transition: .4s;
+	border-radius: 50%;
+}
+
+input:checked + .slider {
+	background-color: #66bb6a; /* Green color for active state */
+}
+
+input:checked + .slider:before {
+	transform: translateX(20px); /* Move the toggle */
+}
+
+/* Optional: Adding a pulse animation */
+@keyframes pulse {
+0% {
+	transform: scale(1);
+}
+50% {
+	transform: scale(1.1);
+}
+100% {
+	transform: scale(1);
+}
+}
+
+/*--------------------------------------------------------------
+# Application form modal pop up
+--------------------------------------------------------------*/
+/* Modal styles */
+.modal {
+	display: none;
+	position: fixed;
+	z-index: 1000;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: visible;
+	background-color: rgba(0, 0, 0, 0.744);
+	transform: none;
+  }	
+  
+  .modal-content {
+	background-color: var(--modal-color);
+	margin: 2% auto;
+	padding: 20px;
+	border-radius: 10px;
+	width: 80%;
+	max-width: 600px;
+	height: 100%;
+	max-height: 90vh; /* Limit modal height to 90% of the viewport */
+	overflow-y: auto; /* Allow scrolling for overflowing content */
+  }
+  
+  .close {
+	color: #aaa;
+	float: right;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+  }
+  
+  .close:hover,
+  .close:focus {
+	color: red;
+	text-decoration: none;
+  }
+  
+  /* -----------------First Form----------------- */
+  
+  input[type="text"],
+  input[type="date"],
+  input[type="number"],
+  input[type="file"] {
+	  width: 100%; 
+	  max-width: 400px;
+	  padding: 10px; 
+	  margin-bottom: 20px; 
+	  border: 1px solid #fff;
+	  border-radius: 25px; 
+	  box-sizing: border-box; 
+	  color: #fff;
+	  background-color: rgba(255, 255, 255, 0.1); 
+  }
+  
+  input[type="email"],
+  input[id="number"]
+  {
+	  width: 400px ; /* Forces the width to be 400px */
+	  width: 100% ; /* Forces to be 80% of the parent width */
+	  max-width: 600px ; /* Optional: Set max width */
+	  padding: 10px; 
+	  margin-bottom: 20px; 
+	  border: 1px solid #fff;
+	  border-radius: 25px; 
+	  box-sizing: border-box; 
+	  color: #fff;
+	  background-color: rgba(255, 255, 255, 0.1);
+  }
+  
+  
+  /* Remove focus outline */
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="date"]:focus,
+  input[type="number"]:focus,
+  input[type="file"]:focus {
+	  outline: none; /* Remove default outline */
+	  border-color: rgb(84, 3, 79);  
+	  box-shadow: 0 0 0 2px rgb(84, 3, 79); 
+  }
+  
+  
+  #age, #currentyear { 
+	  max-width: 200px; 
+  }
+  
+  label {
+	  display: block;
+	  margin-bottom: 5px; 
+	  font-weight: bold; 
+	  color: #fff; 
+  }
+  
+  /* Dropdown Menu */
+  .dropdown-menu {
+	  display: none; /* Initially hidden */
+	  position: absolute;
+	  top: 50px; 
+	  right: 0;
+	  left: 0;
+	  backdrop-filter: blur(10px);
+	  background-color: rgba(255, 255, 255, 0.1);
+	  border: 1px solid rgba(255, 255, 255, 0.2);
+	  border-radius:20px;
+	  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+	  padding: 10px;
+	  z-index: 1;
+	  border-radius: 4px;
+	}
+	.dropdown-menu a{
+		box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.311);
+	}
+  
+	/* Style for the Logout button */
+	#logout-button {
+	  background-color: rgba(250, 7, 198, 0.5);
+	  color: white;
+	  padding: 8px 12px;
+	  border: none;
+	  cursor: pointer;
+	  border-radius: 4px;
+	}
+  
+	#logout-button:hover {
+	  background-color: #ff1a1a;
+	}
+  
+  #profile-icon:hover {
+	  background-color: #fff; 
+  }
+  
+  
+  
+  
+  .application-form h2 {
+	  color:var(--background-color);
+	  margin-bottom: 8px; /* Space below the heading */
+	  text-align: center;
+	  text-transform: uppercase;
+  }
+  
+  .application-form h4 {
+	 color:var(--background-color);
+	  margin-bottom: 10px; /* Space below the heading */
+	  text-align: center;
+  }
+  
+  .name-container {
+	  margin-bottom: 20px; /* Space below the name container */
+  }
+  
+  /* Update the name-fields to create more space between them */
+  .name-fields {
+	  display: flex;
+	  justify-content: space-between;
+	  gap: 20px; 
+	  margin-bottom: 20px; /* Added margin below the name fields */
+  }
+  
+  /* Add space below the contact number and birthdate inputs */
+  label, .name-field input, input[type="text"], input[type="date"] {
+	  margin-bottom: 15px; /* Increased margin below fields */
+  }
+  
+  
+  .name-field {
+	  flex: 1; /* Allow each field to grow and take equal space */
+  }
+  
+  .name-field input {
+	  width: 100%; /* Full width for input fields */
+	  padding: 10px; 
+	  margin-bottom: 4px; 
+	  border: 1px solid #fff; 
+	  border-radius: 25px;
+	  background-color: rgba(255, 255, 255, 0.1); 
+	  color: #fff; 
+  }
+  .name-field input:focus{
+	  outline: none; /* Remove default outline */
+	  border-color: rgb(84, 3, 79);  
+	  box-shadow: 0 0 0 2px rgb(84, 3, 79); 
+  }
+  
+  /* Styling for label */
+  .name-field label {
+	  display: block; 
+	  margin-bottom: 5px; 
+	  font-weight: bold; 
+	  color: #fff; 
+  }
+  
+  /* Adjust margins for hints */
+  .name-field p {
+	  margin-top: 0; 
+	  font-size: 0.8em; 
+	  color: #ccc; 
+	  text-align: center;
+	  margin-top: 2px;
+  
+  }
+  
+  .gender-birthdate-container {
+	  display: flex; /* Use flexbox for alignment */
+	  justify-content: space-between; 
+	  align-items: center; 
+	  gap: 20px; /* Space between elements */
+	  margin-bottom: 5px; /* Space below the container */
+  }
+  
+  .gender-birthdate-container label {
+	  margin-bottom: 0; /* Remove margin below labels */
+	  color: #fff; 
+	  flex-basis: 100px; /* Set a fixed width for labels to align items */
+  }
+  
+  .gender-birthdate-container select,
+  .gender-birthdate-container input[type="date"] {
+	  width: 100%; /* Full width for inputs */
+	  max-width: 200px; /* Set a max-width for dropdown and input */
+	  padding: 10px; 
+	  border: 1px solid #fff;
+	  border-radius: 25px; 
+	  background-color: rgba(255, 255, 255, 0.1); 
+	  color: #fff; 
+	  box-sizing: border-box; /* Include padding and border in element's total width */
+  }
+  
+  .gender-birthdate-container input[type="date"]:focus{
+	  outline: none; /* Remove default outline */
+	  border-color: rgb(84, 3, 79);  
+	  box-shadow: 0 0 0 2px rgb(84, 3, 79); }
+  
+  /* Gender Dropdown Styles */
+  #gender {
+	  width: 100%; /* Full width */
+	  max-width: 400px; /* Maximum width */
+	  padding: 10px; 
+	  margin-bottom: 20px; /* Space below */
+	  border: 1px solid #fff; 
+	  border-radius: 25px; 
+	  background-color: #00000000;
+	  color: #fff; 
+	  appearance: none; /* Remove default arrow */
+	  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff" style="width:16px;height:16px"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E'); /* Custom dropdown arrow */
+	  background-repeat: no-repeat; 
+	  background-position: right 10px center; /* Position the arrow */
+	  background-size: 12px; /* Size of the custom arrow */
+  }
+  
+  /* Gender Dropdown Focus Effect */
+  #gender:focus {
+	  background-color:rgb(57, 2, 53); ;
+	  outline: none; /* Remove default outline */
+	  border-color: rgb(84, 3, 79);  
+	  box-shadow: 0 0 0 2px rgb(84, 3, 79); 
+  }
+  
+  /* Label Styles for Gender */
+  label[for="gender"] {
+	  margin-bottom: 5px; 
+	  font-weight: bold; 
+	  color: #fff; 
+  }
+  
+  /* Address Section Styles */
+  .address {
+	  margin-bottom: 20px; /* Space below the address section */
+	  color: #fff; /* Text color */
+  }
+  
+  .address label {
+	  display: block; 
+	  margin-bottom: 5px; 
+	  font-weight: bold;
+	  color: #fff; 
+  }
+  
+  .address-fields {
+	  display: flex; 
+	  gap: 15px; /* Space between fields */
+	  margin-bottom: 20px;
+  }
+  
+  .address-field {
+	  flex: 1; /* Allow fields to grow equally */
+	  min-width: 120px;
+  }
+  
+  .address-field input {
+	  width: 100%; 
+	  padding: 10px; 
+	  border: 1px solid #fff; 
+	  border-radius: 25px; 
+	  background-color: rgba(255, 255, 255, 0.1);
+	  color: #fff; 
+	  font-size: 1em; 
+	  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2); 
+	  margin-bottom: 4px;
+  }
+  
+  /* Adjust margins for hints below input fields */
+  .address-field p {
+	  font-size: 0.8em; 
+	  color: #ccc;
+	  text-align: center; 
+	  margin-top: 2px;
+  }
+  
+  /* Remove focus outline for inputs */
+  .address-field input:focus {
+	  outline: none; 
+	  border-color: rgb(84, 3, 79);  
+	  box-shadow: 0 0 0 2px rgb(84, 3, 79); 
+  }
+  
+  /* Readonly input styling */
+  .address-field input[readonly] {
+	  background-color: rgba(255, 255, 255, 0.05); 
+	  color: #ccc; 
+  }
+  
+  
+  .street-field {
+	  margin-top: 15px; 
+	  text-align: center; 
+  }
+  
+  .street-field input {
+	  width: 400px ; 
+	  width: 100% ;
+	  max-width: 600px;
+	  padding: 10px; 
+	  border: 1px solid #fff; 
+	  border-radius: 25px; 
+	  background-color: rgba(255, 255, 255, 0.1); 
+	  color: #fff; 
+	  margin-bottom: 5px; 
+  }
+  
+  .street-field p {
+	  font-size: 0.8em;
+	  color: #ccc;
+	  margin-top: 5px;
+	  line-height: 1.2; 
+  }
+  
+  
+  /* Button container for proper layout */
+  .button-container {
+	  display: flex; /* Flexbox for alignment */
+	  justify-content: space-between; /* Space buttons evenly */
+	  margin-top: 20px; /* Add margin on top for spacing */
+  }
+  
+  /* Optional: Adjust button sizes and styles if necessary */
+  .next-button {
+	  padding: 10px 20px; /* Button padding */
+	  border: none; /* Remove default border */
+	  border-radius: 25px; /* Rounded corners */
+	  background-color: rgba(55, 13, 48, 0.591);
+	  border: 1px solid rgba(215, 47, 187, 0.959);
+	  color:#fff;
+	  font-size: 16px; /* Font size */
+	  cursor: pointer; /* Pointer on hover */
+	  transition: background-color 0.3s; /* Smooth transition */
+  }
+  
+  .next-button:hover {
+	  background-color: rgba(215, 47, 187, 0.959); /* Darker on hover */
+  }
+  
+  /* Button focus effect */
+  .next-button:focus {
+	  outline: none; /* Remove default outline */
+	  box-shadow: 0 0 0 2px rgba(59, 1, 40, 0.5); /* Add a focus ring */
+  }
+  
+  
+  /* -----------------Second Form----------------- */
+  
+  input[id="mother-contact"],
+  input[id="father-contact"]
+  {
+	  width: 400px ; /* Forces the width to be 400px */
+	  width: 100% ; /* Forces to be 80% of the parent width */
+	  max-width: 600px ; /* Optional: Set max width */
+  }
+  
+  
+  /* -----------------Third Form----------------- */
+  
+  input[id="school-name"]
+  {
+	  width: 400px ; /* Forces the width to be 400px */
+	  width: 100% ; /* Forces to be 80% of the parent width */
+	  max-width: 600px ; /* Optional: Set max width */
+  }
+  /* Dropdown Styles */
+  select {
+	  width: 100%; /* Full width */
+	  max-width: 400px; /* Set a maximum width */
+	  padding: 10px; /* Padding for comfort */
+	  margin-bottom: 10px; /* Space below dropdown */
+	  border: 1px solid #fff; /* Border styling */
+	  border-radius: 25px; /* Rounded corners */
+	  background-color: rgba(255, 255, 255, 0.1); /* Background color */
+	  color: #fff; /* Text color */
+	  appearance: none; /* Remove default arrow */
+	  background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="%23fff" style="width:16px;height:16px"%3E%3Cpath d="M7 10l5 5 5-5H7z"/%3E%3C/svg%3E'); /* Custom dropdown arrow */
+	  background-repeat: no-repeat; /* Prevent image repetition */
+	  background-position: right 10px center; /* Position the arrow */
+	  background-size: 12px; /* Size of the custom arrow */
+  }
+  
+  /* Dropdown Focus Effect */
+  select:focus {
+	  outline: none; /* Remove default outline */
+	  border-color: rgb(84, 3, 79);  
+	  box-shadow: 0 0 0 2px rgb(84, 3, 79); 
+  }
+  
+  /* Label Styles for Dropdowns */
+  label {
+	  display: block; /* Full width for the label */
+	  margin-bottom: 5px; /* Space below label */
+	  font-weight: bold; /* Bold label text */
+	  color: #fff; /* Label color */
+  }
+  
+  /* Optional: Additional styles for hover effect */
+  select:hover {
+	  background-color: rgba(255, 255, 255, 0.2); /* Change background on hover */
+  }
+  
+  .form-row {
+	  display: flex;
+	  justify-content: space-between; /* Adjusts space between items */
+	  margin-bottom: 15px; /* Space below the row */
+  }
+  
+  .form-group {
+	  flex: 1; /* Allows groups to take equal space */
+	  margin-right: 10px; /* Space between groups */
+	  margin-bottom: 1rem; /* Adds space between form groups */
+  }
+  
+  .form-group:last-child {
+	  margin-right: 0; /* Removes margin from the last group */
+  }
+  
+  input[type="file"] {
+	  display: none; /* Hide the default file input */
+  }
+  
+  .label-file {
+	  display: inline-block;
+	  padding: 10px 20px;
+	  background-color: rgba(55, 13, 48, 0.591);
+	  border: 1px solid rgba(215, 47, 187, 0.959);
+	  color:#fff;
+	  border-radius: 4px;
+	  cursor: pointer;
+	  text-align: center;
+	  width: 100%; /* Full width of the parent */
+	  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  input[type="file"]:focus + .label-file,
+  .label-file:hover {
+	  background-color:rgba(215, 47, 187, 0.959); /* Darker shade on hover */
+  }
+  
+  .file-name {
+    margin-top: 0.5rem; /* Adds space above the file name display */
+    font-size: 0.9rem; /* Adjusts font size for the file name */
+    color: #000000; /* Changes text color to black */
+    text-align: center;
+}
+
+/*-------------- Notification Container--------------*/
+.notification-container {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+/* Notification Form */
+.notification-form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 30%;
+    min-width: 300px;
+    margin: 30px auto;
+}
+
+/* Title of the notification form */
+.notification-form h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Input and textarea fields */
+.notification-form .form-group {
+    margin-bottom: 15px;
+}
+
+.notification-form .form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.notification-form .form-group input,
+.notification-form .form-group textarea,
+.notification-form .form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px;
+	color: black;
+}
+
+.notification-form .form-group input:focus,
+.notification-form .form-group textarea:focus,
+.notification-form .form-group select:focus {
+    border-color: var(--pink);
+    outline: none;
+	color: black;
+}
+
+/* Send button style */
+.notification-form .send-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.notification-form .send-button:hover {
+    background-color: #0056b3;
+}
+
+
+/* Notification Table */
+.notification-table {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 65%;
+    min-width: 300px;
+    margin-top: 30px;
+	overflow-x: auto;
+
+}
+
+.notification-table h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+/* Table Styles */
+.notification-table table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    margin-right: 20px; 
+	flex: 1; 
+	flex-basis: 500px;
+}
+
+.notification-table th,
+.notification-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.notification-table th {
+    background-color: var(--pink);
+    font-weight: bold;
+}
+
+.notification-table tr:hover {
+    background-color: #f9f9f9;
+}
+
+.notification-table td {
+    font-size: 14px;
+    color: #333333;
+}
+
+.delete-all-notifications {
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.delete-all-button {
+    background-color: #ff4d4d;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.delete-all-button:hover {
+    background-color: #e60000;
+}
+.remove-button i.bx.bxs-trash{
+	color:#e60000;
+}
+.notification-table .edit_button i.bx.bx-edit{
+	color:#007bff;
+}
+.notification-table .edit_button i.bx.bx-edit:hover{
+	transform: scale(1.2);
+}
+
+/* Modal Styles for Edit Notification Modal */
+.notificationModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent background */
+}
+
+/* Modal content specific to edit notification modal */
+.notificationModal .modal-content {
+    background-color: #fff;
+	color:#000;
+    margin: 8% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%;
+    max-width: 450px;
+	height: 100%;
+	max-height: 450px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Close button for Edit Notification Modal */
+.notificationModal .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.notificationModal .close:hover,
+.notificationModal .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Specific styles for inputs and labels within the Edit Notification Modal */
+.notificationModal label {
+    font-weight: bold;
+    display: block;
+    margin: 10px 0 5px;
+	color:#000;
+}
+
+.notificationModal input[type="text"],
+.notificationModal input[type="email"],
+.notificationModal textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+	color:#000;
+}
+
+.notificationModal button[type="submit"] {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+	font-weight: bold;
+}
+
+.notificationModal button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/*DARK MODE STYLE*/
+body.dark .notification-form {
+    background-color: #060714;
+}
+body.dark .notification-form h2{
+    background-color: #fff;
+}
+body.dark .notification-form .form-group label {
+    color: #fff !important;
+}
+body.dark .notification-form .form-group input,
+body.dark .notification-form .form-group textarea{
+	color:#fff;
+	background-color:#060714;
+}
+body.dark .notification-form .form-group select{
+	color:#fff;
+}
+body.dark .notification-form .form-group textarea{
+	background-color:#060714;
+}
+body.dark .notification-form .form-group input:focus,
+body.dark .notification-form .form-group textarea:focus{
+    border-color: var(--pink);
+    outline: none;
+	color: #ffff;
+}
+body.dark .notification-form .form-group select:focus {
+    border-color: var(--pink);
+    outline: none;
+	color: #000;
+}
+body.dark .notification-table{
+    background-color: #060714;
+}
+body.dark .notification-table h2{
+    color: #fff;
+}
+body.dark .notification-table tr td {
+	color:#fff;
+}
+body.dark .notification-table tr:hover {
+	background-color:#101828;
+}
+
+
+/*-------------- Notification Container--------------*/
+
+
+
+/*---------------Reports Table----------------------- */
+/* Table Container */
+.table-container {
+    margin: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+}
+
+/* Table Header Styles */
+th {
+    background-color: var(--pink);
+    color: #fff;
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 16px;
+}
+
+/* Table Data Styles */
+td {
+    padding: 12px 15px;
+    text-align: left;
+    font-size: 14px;
+    border-bottom: 1px solid #000;
+
+}
+
+/* Hover Effect for Rows */
+tr:hover {
+    background-color: #f2f2f2;
+}
+
+/* Table Border and Cell Styles */
+table, th, td {
+    border: 1px solid #000;
+}
+
+table th, table td {
+    padding: 8px;
+}
+
+/* Last Row Border */
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/*Report Charts*/
+.pie-table-container {
+    width: 50%; /* Adjust the width as needed */
+    height: 50%; /* Adjust the height to make the container bigger or smaller */
+    margin: 20px auto; /* Center the container horizontally */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px; /* Optional: Add some padding inside the container */
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.pie-table-container canvas {
+    width: 100% !important; /* Make the canvas take up the full width of its parent container */
+    height: 100% !important; /* Make the canvas take up the full height of its parent container */
+}
+
+/*DARK MODE*/
+body.dark .table-container{
+	background-color:#060714;
+}
+body.dark table, th, td {
+    border: 1px solid #515151;
+}
+body.dark tr:hover{
+	background-color:#101828;
+}
+body.dark .pie-table-container{
+	background-color:#060714;
+}
+/*---------------Reports Table----------------------- */
+
+
+@media screen and (max-width: 768px) {
+	#sidebar {
+		width: 200px;
+	}
+
+	#content {
+		width: calc(100% - 60px);
+		left: 200px;
+	}
+
+	#content nav .nav-link {
+		display: none;
+	}
+	.notification-table table {
+        width: calc(100% - 60px); /* Adjust width for smaller screens with sidebar */
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+	#content nav form .form-input input {
+		display: none;
+	}
+
+	#content nav form .form-input button {
+		width: auto;
+		height: auto;
+		background: transparent;
+		border-radius: none;
+		color: var(--dark);
+	}
+
+	#content nav form.show .form-input input {
+		display: block;
+		width: 100%;
+	}
+	#content nav form.show .form-input button {
+		width: 36px;
+		height: 100%;
+		border-radius: 0 36px 36px 0;
+		color: var(--light);
+		background: var(--red);
+	}
+
+	#content nav form.show ~ .notification,
+	#content nav form.show ~ .profile {
+		display: none;
+	}
+
+	#content main .box-info {
+		grid-template-columns: 1fr;
+	}
+
+	#content main .table-data .head {
+		min-width: 420px;
+	}
+	#content main .table-data .order table {
+		min-width: 420px;
+	}
+	#content main .table-data .todo .todo-list {
+		min-width: 420px;
+	}
+}

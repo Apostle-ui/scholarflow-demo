@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="styles/signup.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>ScholarFlow Sign up</title>
+	<link rel="icon" sizes="180x180" href="pic/favicon.ico">
+    <link rel="icon" type="image/png" sizes="32x32" href="pic/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pic/favicon-16x16.png">
+    <link rel="manifest" href="pic/site.webmanifest">
+
+</head>
+<body>
+    <section id="sign-in">
+        <div class="image-container">
+            <div class="gallery-item">
+             <img src="pic/gallery1.png" alt="Image 1">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery2.png" alt="Image 2">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery3.png" alt="Image 3">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery4.png" alt="Image 4">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery5.png" alt="Image 5">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery6.png" alt="Image 6">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery7.png" alt="Image 7">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery8.png" alt="Image 8">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery9.png" alt="Image 9">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery10.png" alt="Image 10">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery11.png" alt="Image 11">
+            </div>
+ 
+            <div class="gallery-item">
+             <img src="pic/gallery12.png" alt="Image 12">
+            </div>
+         </div>
+         <div id="logo_1">
+            <img src="pic/logo1.png" alt="Logo"/>
+            <h3>cholarFlow.</h3>
+        </div>
+        <div class="sign-up-container">
+           
+            <h1>SIGN IN</h1>
+<form id="signup-form" action="signup.php" method="POST" onsubmit="return validateForm();">
+
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" placeholder="Create your username">
+
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" placeholder="Type your Email">
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" placeholder="Type your Name">
+
+    <label for="contact_number">Contact Number:</label>
+    <input type="text" id="contact_number" name="contact_number" placeholder="Type your Contact Number">
+    
+    <label for="password">Password:</label>
+    <div class="password-container">
+        <input type="password" id="password" name="password" placeholder="Create your password">
+        <!--<button id="togglePassword" type="button" class="eye-toggle">
+            <i class="fa-solid fa-eye-slash"></i>
+        </button>-->  
+    </div>
+    
+    <label for="password-2">Re-enter your password:</label>
+    <div class="password-container">
+       <input type="password" id="password-2" name="password-2" placeholder="Re-enter your password">
+       <!--<button id="togglePassword2" type="button" class="eye-toggle">
+            <i class="fa-solid fa-eye-slash"></i> 
+        </button>-->  
+    </div>
+
+    <div id="popup-notification" class="popup-notification"></div>
+
+    <button type="submit" class="button" id="register_button">Register</button>
+</form>
+
+<script src="script.js">
+
+</script>
+</body>
+</html>
+

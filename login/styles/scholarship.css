@@ -1,0 +1,98 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #000;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+/* SCHOLARSHIPS */
+
+.scholarships-section {
+    background-image: url('../pic/bg3.jpg');/* Add your image URL here */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;  /* Ensures the image is centered */
+    min-height: 100vh;            /* Ensures it takes the full viewport height */
+    width: 100%;
+    position: relative; 
+    text-align: center;
+    color: white;
+    padding: 20px;
+    margin: 0 auto;
+}
+
+
+.scholarships-section h1 {
+    font-size: 2.5em;
+    margin-bottom: 40px;
+}
+
+.scholarships-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.scholarship-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    max-height: 350px; /* Ensure text stays inside */
+    height: 300px;
+    backdrop-filter: blur(10px);
+    overflow: hidden; /* Prevent overflow */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 1;
+}
+
+.scholarship-card h2 {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+}
+
+.scholarship-card p {
+    margin-bottom: 10px;
+}
+
+.scholarship-card ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+.scholarship-card li {
+    margin-bottom: 5px;
+}
+
+.scholarship-card .apply2-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: transparent;
+    border-radius:4px;
+    border: 1px solid white;
+    color: white;
+    text-decoration: none; /* Remove underline */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    align-self: center;
+    position: relative; /* Ensure the button is on top */
+    z-index: 2; /* Make sure it's clickable */
+}
+
+
+.scholarship-card .apply2-button:hover {
+    background-color: white;
+    color: black;
+}

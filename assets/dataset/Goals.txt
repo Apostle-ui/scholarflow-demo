@@ -1,0 +1,55 @@
+Edit Applicant: email and contact_number(DONE)
+scan: email and contact_number(DONE)
+download_file: email and contact_number (DONE)
+download_all_files: email and contact_number (DONE)
+addApplicants: email (DONE)
+remove eligible and rejected: email and contact_number (DONE)
+school_level (DONE) and year_level in edit (DONE)
+validation in edit (DONE)
+validation for user accounts (DONE)
+validation for organizer accounts (DONE)
+validation for admin accounts (DONE)
+temp files wont upload to php/uploads (DONE)
+clicking outside the box will close the modal (DONE)		
+Pressing esc will close the modal (DONE)
+fix the bug on the removal from eligible and rejected - same id will cause an error - to fix, whenever one applicant is deleted, the auto increment will -1 (DONE)
+userEmail for Eligible (DONE)
+userEmail for Rejected (DONE)
+organizer (done)
+add an alert for accept and reject(DONE)
+edit score
+
+FUNCTIONALITIES:
+Forget Password (DONE)
+Password Hashing (DONE)
+make the example cor the trained model for detecting forged cor (done)
+making sure you can apply only once (DONE)
+DASHBOARD  
+LOOPING OF SCAN_FILE (Done)
+Remove all applicants - eligible and rejected (DONE)
+Download List of Applicants, Eligile, Rejected Applicants (excel)(DONE)
+User Receive Notification
+Admin Send Notification
+Scoring system for Interview (DONE)
+Scoring System for Examination (DONE)
+Reports (audit trail)
+Full Scholar
+Half Scholar
+Automation of FUll and Half Scholar
+
+$mail->isSMTP();
+            $mail->Host = 'smtp.gmail.com';  // Use the correct SMTP server
+            $mail->SMTPAuth = true;
+            $mail->Username = 'nerivancarl@gmail.com';  // Your email address
+            $mail->Password = 'jbqu himx zmgs sghj';  // Your Gmail password or app password
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;  // Use TLS encryption
+            $mail->Port = 587;  // Port for TLS
+
+$applicant_id = $_POST['applicant_id'];
+    $deserve_scholarship = $_POST['deserve_scholarship'];
+    $financial_need = $_POST['financial_need'];
+    $academic_goals = $_POST['academic_goals'];
+    $future_impact = $_POST['future_impact'];
+    $community_impact = $_POST['community_impact'];
+
+

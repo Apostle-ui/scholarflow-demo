@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles/scholarship.css">
+        <title>Scholarship Offers</title>
+        <link rel="icon" sizes="180x180" href="pic/favicon.ico">
+        <link rel="icon" type="image/png" sizes="32x32" href="pic/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="pic/favicon-16x16.png">
+        <link rel="manifest" href="pic/site.webmanifest">
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    </head>
+    <body>
+        
+        <div class="scholarships-section">
+            <h1>Scholarships</h1>
+            <div class="scholarships-container">
+                <div class="scholarship-card">
+                    <!-- Reduced font-size for SCHOLARFLOW to ensure it fits properly -->
+                    <h2 class="abas-title">ABAS Scholarship</h2>
+                    <p>Applicable for:</p>
+                    <ul>
+                        <li>Senior High School</li>
+                        <li>College</li>
+                    </ul>
+                    <a href="../index.php" class="apply2-button">Apply</a>
+                </div>
+                <div class="scholarship-card">
+                    <h2>Muntinlupa Scholarship Program</h2>
+                    <p>Applicable for:</p>
+                    <ul>
+                        <li>Elementary</li>
+                        <li>Junior/Senior High School</li>
+                        <li>College</li>
+                    </ul>
+                    <a href="javascript:void(0);" class="apply2-button" onclick="showNotAvailableAlert()">Apply</a>
+                </div>
+                
+                <div class="scholarship-card">
+                    <h2>Scholar ng Bayan</h2>
+                    <p>Applicable for:</p>
+                    <ul>
+                        <li>College</li>
+                    </ul>
+                    <a href="javascript:void(0);" class="apply2-button" onclick="showNotAvailableAlert()">Apply</a>
+                </div>
+
+                
+            </div>
+        </div>
+        
+
+        <script>
+            // Function to show SweetAlert when "Apply" is clicked
+            function showNotAvailableAlert() {
+                Swal.fire({
+                    icon: 'warning',
+                    title: 'Sorry!',
+                    text: 'This scholarship is not available at the moment.',
+                    confirmButtonText: 'OK'
+                });
+            }
+            </script>
+        
+    </body>
+</html>

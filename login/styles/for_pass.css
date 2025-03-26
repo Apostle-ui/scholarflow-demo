@@ -1,0 +1,616 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Dela+Gothic+One&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Spicy+Rice&display=swap');
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: #f5f5f5;
+    font-family: Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+:root{
+    --brand-font: "Dela Gothic One", sans-serif;
+    --button-hover-color:#EB638B;
+}
+.img-container {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 35%;
+    border:1px solid #000;
+    
+}
+
+.img-container img {
+    height: 100%;
+    width:100%;
+    object-fit: cover;
+    z-index: -1;
+    min-height: 600px;
+}
+
+#logo_1{
+    position: relative; /* Changed from absolute to relative for better responsiveness */
+    top: -3px;
+    left: 10px;
+    display: flex;
+    align-items: center; /* Aligns items vertically within the container */
+    gap: 0; /* Add spacing between the image and text */
+    padding: 10px; /* Optional: Add padding for spacing */
+    z-index: 1;
+}
+#logo_1 img{
+    width: 45px; /* Set a fixed width or use rem for relative scaling */
+    height: auto; /* Maintain aspect ratio */
+    max-width: 100%; /* Ensure it doesn't overflow */
+    filter: drop-shadow(3px 3px 0px black);
+}
+#logo_1 h3{
+    font-size: 1.5rem; /* Use rem for scalable font sizes (24px = 1.5rem) */
+    margin-top: 0;
+    margin-bottom: 0;
+    letter-spacing: 2px;
+    color: #fff;
+    font-family: var(--brand-font);
+    font-weight: 200;
+    text-shadow: 3px 3px 0px black;
+}
+.fpass-content-container {
+    width: 100%;
+    max-width: 600px;
+    min-height: 1000px;
+    height: 100%;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #f5f5f5;
+    color:#000;
+    position:absolute;
+    right:0;
+    top:120px;
+    margin-right: 20px;
+}
+
+.page {
+    display: none; /* Hide all pages by default */
+}
+
+.page.active {
+    display: block; /* Show only the active page */
+}
+#container-1 {
+    position: relative;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center; 
+    width: 100%;
+    height: 100%;
+}
+
+#container-1 h1 {
+    display: flex;
+    margin-top: 0;
+    position: absolute;
+    top: -70px; 
+    left: 30%; 
+    transform: translateX(-50%); /* Center horizontally */
+    text-align: center; 
+    font-size: 2.5rem;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+#container-1 p {
+    line-height: 1.5em; 
+    height: 3em; 
+    font-size: 1.0625rem;
+    text-align: justify;
+    margin-right: 40%;
+    margin-bottom: 8%;
+}
+#container-1 #email {
+    margin-top: 10px;
+    padding: 10px;
+    width: 60%;
+    box-sizing: border-box; 
+    display: block;
+    border-radius:10px;
+    background-color:transparent;
+    border-color:#000;
+    color:#000;
+}
+
+#container-1 .code-button {
+    padding: 10px;
+    margin-top: 10px; 
+    width: 60%; 
+    box-sizing: border-box; 
+    display:block;
+    border-radius:10px;
+    font-weight: bold;
+    cursor: pointer;
+    border:none;
+    color:#fff;
+    background-color:#ed6aa3;
+}
+
+#container-1  .code-button:hover{
+    background-color: #EB638B; 
+}
+
+#fpass-container-2{
+    position: relative;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center; 
+    width: 100%;
+    height: 100%;
+}
+
+#fpass-container-2 h1 {
+    display: flex;
+    margin-top: 0;
+    position: absolute;
+    top: -70px; 
+    left: 30%;
+    transform: translateX(-50%); 
+    text-align: center; 
+    font-size: 2.5rem;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+
+#fpass-container-2 p {
+    margin-right: 60px;
+    margin-bottom: 20px;
+    line-height: 1.5em; 
+    height: 3em; 
+    font-size: 1.0625rem;
+    text-align: justify;
+    padding-right: 30%;
+}
+#fpass-container-2 #code {
+    padding: 10px;
+    width: 60%;
+    box-sizing: border-box; 
+    display: block;
+    border-radius:10px;
+    color:#000;
+    background-color:transparent;
+    border-color:#000;
+}
+
+#fpass-container-2 .verify-button {
+    padding: 10px;
+    margin-top: 10px; 
+    width: 60%; 
+    box-sizing: border-box; 
+    display:block;
+    border-radius:10px;
+    cursor: pointer;
+    font-weight: bold;
+    border:none;
+    color:#fff;
+    background-color:#ed6aa3;
+}
+#fpass-container-2 .prev-button {
+    padding: 10px;
+    margin-top: 10px; 
+    width: 60%; 
+    box-sizing: border-box; 
+    display:block;
+    border-radius:10px;
+    cursor:pointer;
+    border:none;
+    font-weight: bold;
+    background-color:#d3d3d3;
+    color:#000;
+}
+#fpass-container-2 .verify-button:hover{
+    background-color:#EB638B;
+}
+#fpass-container-2  .prev-button:hover{
+    background-color:#b0b0b0;
+}
+#fpass-container-3{
+    position: relative;
+    align-items: center;
+    flex-direction: column; 
+    justify-content: center; 
+    width: 100%;
+    height: 100%;
+}
+#fpass-container-3 h1 {
+    display: flex;
+    position: absolute;
+    top:-70px;
+    left: 33%; 
+    transform: translateX(-55%); 
+    text-align: center;
+    font-size: 2.5rem;
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
+}
+#fpass-container-3 p {
+    margin-right: 60px;
+    margin-bottom: 20px;
+    line-height: 1.5em; 
+    height: 3em;
+    font-size: 1.0625rem;
+    text-align: justify;
+    padding-right: 30%;
+}
+#fpass-container-3 #new-password {
+    padding: 10px;
+    width: 60%;
+    box-sizing: border-box; 
+    display: block;
+    border-radius:10px;
+    color:#000;
+    background-color:transparent;
+    border-color:#000;
+}
+
+#fpass-container-3 #re-password {
+    padding: 10px;
+    margin-top: 10px;
+    width: 60%;
+    box-sizing: border-box; 
+    display: block;
+    border-radius:10px;
+    color:#000;
+    background-color:transparent;
+    border-color:#000;
+}
+
+#fpass-container-3 .reset-button {
+    padding: 10px;
+    margin-top: 14px; 
+    width: 60%; 
+    box-sizing: border-box; 
+    display:block;
+    border-radius:10px;
+    cursor:pointer;
+    font-weight: bold;
+    border:none;
+    color:#fff;
+    background-color:#ed6aa3;
+    
+}
+#fpass-container-3 .prev-button {
+    padding: 10px;
+    margin-top: 10px; 
+    width: 60%; 
+    box-sizing: border-box; 
+    display:block;
+    border-radius:10px;
+    cursor:pointer;
+    border:none;
+    font-weight: bold;
+    background-color:#d3d3d3;
+    color:#000;
+}
+#fpass-container-3 .reset-button:hover{
+    background-color:#EB638B;
+}
+#fpass-container-3 .prev-button:hover{
+    background-color:#b0b0b0;
+}
+
+/* Modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0, 0, 0); /* Fallback color */
+    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity */
+    padding-top: 60px;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative; /* Ensure correct positioning for pseudo-element */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center all elements horizontally */
+    justify-content: center; /* Center all elements vertically */
+    background-color: rgba(255, 255, 255, 0.1); /* Semi-transparent white background */
+    backdrop-filter: blur(10px); /* Blur effect for the background */
+    border-radius: 10px;
+    margin: 5% auto;
+    color: #fff;
+    height: 50%;
+    width: 70%; /* Could be more or less, depending on screen size */
+    max-width: 500px;
+    padding: 20px;
+    z-index: 2; /* Ensure the text stays on top */
+}
+
+
+.modal-content p{
+    font-size: 20px;
+    text-align: center;
+    margin-top: 20%;
+    font-weight: bold;
+}
+/* Close button */
+.close {
+    position: absolute; /* Position it in the top right corner */
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #cd5792;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Button styling */
+#login-button {
+    position: relative;
+    margin: 50px;
+    margin-right: 80px;
+    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF69B4;
+    color: #fff;
+    font-weight: bold;
+    border: none;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+#login-button:hover {
+    background-color: #cd5792; 
+    border-color:#FF69B4;
+}
+
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-left: 20px; /* Space between buttons and dots */
+    list-style: none;
+    padding: 0;
+    position: absolute;
+    right:28%;
+    top:520px;
+}
+
+.dots li {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ccc;
+    margin: 0 5px; /* Space between dots */
+    transition: background-color 0.3s ease, width 0.3s ease;
+}
+
+.dots li.active {
+    background-color: #fff;
+    border-radius: 10px;
+    width: 40px; /* Increase size for active dot */
+    height: 10px; /* Increase size for active dot */
+}
+
+
+
+/*MEDIA QUERY*/
+@media (max-width: 1024px) {
+    .img-container img {
+        width:90%;
+    }
+    #logo_1 img{
+        width: 40px; /* Set a fixed width or use rem for relative scaling */
+        height: auto; /* Maintain aspect ratio */
+    }
+    #logo_1 h3{
+        font-size: 1.3rem;
+    }
+    .fpass-content-container{
+        width:50%;
+        
+    }
+    #container-1 p,
+    #fpass-container-2 p,
+    #fpass-container-3 p {
+    margin-bottom: 13%;
+    padding-right: 0;
+    margin-right: 44%;
+    }
+    #container-1 h1,
+    #fpass-container-2 h1,
+    #fpass-container-3 h1 {
+        font-size: 2rem;
+    }
+    .dots{
+        left:48%;
+    }
+}
+
+
+@media (max-width: 768px) {
+    .img-container {
+        width: 120%;
+        max-width:2000px;
+        height: 10%;
+        background-size: cover; 
+        min-height: min-content;
+    }
+    .img-container img{
+        min-height: 90px;
+    }
+
+    #logo_1{
+        top: 2%;
+        gap: 0;
+        left: 0;
+    }
+    #logo_1 h3{
+        font-size: 1.3rem;
+    }
+    #logo_1 img{
+        width: 6%;
+        height: auto;
+    }
+    .fpass-content-container {
+        width: 100%;
+        max-width: 600px;
+        min-height: 1000px;
+        height: 100%;
+        padding: 50px;
+        display: flex;
+        position:absolute;
+        left: 90px;
+        top:150px;
+    }
+    #container-1 h1,fpass-container-2 h1,fpass-container-3 h1{
+        font-size: 1.8rem;
+    }
+    #container-1 p,fpass-container-2 p,fpass-container-3 p {
+        margin-right: 40%;
+        font-size: 1rem;
+    }
+    .dots {
+        display: flex;
+        justify-content: center;
+        margin-left: 20px; /* Space between buttons and dots */
+        list-style: none;
+        padding: 0;
+        position: absolute;
+        top:520px;
+        left: 25%;
+       
+    }
+}
+
+
+@media (max-width: 426px) {
+    .img-container {
+        width: 120%;
+        max-width:2000px;
+        height: 10%;
+        background-size: cover; 
+        min-height: min-content;
+    }
+    .img-container img{
+        min-height: 90px;
+    }
+    #logo_1{
+        top: 2%;
+        gap: 0;
+        left: 0;
+    }
+    #logo_1 h3{
+        font-size: 1.3rem;
+    }
+    #logo_1 img{
+        width: 6%;
+        height: auto;
+    }
+    .fpass-content-container {
+        display: flex;
+        width: 100%;
+        left:-4%;
+        top: 20%;
+    }
+    #fpass-container-3 {
+        width: 100%; /* Adjust width for smaller screens */
+    }
+    #container-1, #fpass-container-2, #fpass-container-3 {
+        margin: 0 auto; /* Center the container */
+        align-items:center;
+        width: 180%; /* Adjust width for smaller screens */
+       
+    }
+    #container-1 h1, #fpass-container-2 h1 {
+        font-size: 1.8rem; 
+        text-align: center; 
+    }
+    #fpass-container-3 h1{
+        padding-left: 0;
+        font-size: 1.9rem;
+        text-align: center;
+    }
+    #container-1 p, #fpass-container-2 p {
+        font-size:1rem;
+        padding-bottom: 15%;
+        padding-top: 2%;
+        width:100%;
+        padding-right: 45%;
+        padding-left: 3%;
+    }
+    #container-1 p{
+        margin-bottom: 5%;
+    }
+    #fpass-container-2 p{
+        margin-bottom: 3%;
+    }
+    #fpass-container-3 p{
+        margin-top: -5%;
+        font-size: 1rem; 
+        margin-bottom: 5%;
+    }
+    .fpass-content-container input {
+        width: 50%; /* Full width */
+        padding: 12px; /* Padding for comfort */
+        font-size: 1rem; /* Font size */
+        padding-bottom: 10%; /* Space below each input */
+        border: 1px solid #ccc; /* Light border */
+        border-radius: 5px; /* Rounded corners */
+        box-sizing: border-box; /* Include padding and border in width */
+    }
+    .fpass-content-container button{
+        width: 50%;
+    }
+    #container-1 #email{ 
+        margin-top: 5%;
+    }
+    .modal-content {
+        top: 5%;
+        right: 13%; 
+        width: 50%;
+        height: 30%;
+    }
+    .modal-content p{
+        font-size: 0.9rem;
+    }
+    #login-button {
+        font-size: 0.9rem;
+        padding: 10px 50px;
+        margin: 50px;
+    }
+    .dots {
+        top: 90%;
+        left: 25%;
+        
+    }
+    .dots li, .dots .li .active{
+        width: 7px;
+        height: 10px;
+    }
+   
+}
+
